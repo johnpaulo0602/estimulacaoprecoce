@@ -1,0 +1,26 @@
+QWidget > QFrame{
+	border: 1px solid #f9f9fa;
+	border-radius: 8px;
+}
+
+QWidget > QFrame > QLabel {
+	border: none;
+	border-radius: none;
+	color: #f9f9fa;
+	font-size: 12px;
+	padding:0;
+}
+
+QWidget > QFrame > QLineEdit {
+	background-color: #272944;
+ 	padding: 0 16px;
+ 	border-radius: 8px;
+	color: #f9f9fa;
+height: 32px
+}
+
+QWidget > QFrame > QLineEdit:focus {
+  border: 1px solid #f9f9fa;
+  box-shadow: 0px 0px 0px 2px #242424;
+  background-color: transparent;
+}
