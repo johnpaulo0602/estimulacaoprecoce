@@ -66,19 +66,3 @@ CREATE TABLE AlunoEndereco (
   foreign key (Endereco_idEndereco) references endereco(idEndereco),
   foreign key (Aluno_idAluno) references Alunos(IdAluno) ON DELETE CASCADE
 );
-
--- Cria um trigger para deletar um registro da tabela Alunos após sua inserção
-
-DELIMITER $$
-CREATE TRIGGER tr_delete_aluno AFTER INSERT ON Alunos
-FOR EACH ROW
-BEGIN
-    DELETE FROM Alunos WHERE NomeCompleto = NEW.NomeCompleto;
-END$$
-DELIMITER ;
-
-INSERT INTO Alunos (NomeCompleto, CPF, DataNascimento, Sexo, mae, pai, Naturalidade, UF, HipoteseDiagnostica) 
-VALUES ('João da Silva', '123.456.789-10', '1995-05-12', 'Masculino', 'Maria da Silva', 'José da Silva', 'São Paulo', 'SP', 'Autismo');
-
--- inserir o nome do aluno para disparar a trigger
-INSERT INTO tabela_nome (nome_aluno) VALUES ('João da Silva');
