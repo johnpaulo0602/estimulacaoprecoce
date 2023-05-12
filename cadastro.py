@@ -66,7 +66,7 @@ def deletar_dados():
                 
 #executador da interface
 app=QtWidgets.QApplication([])
-janela=uic.loadUi('estimulacaoprecoce/interface.ui')
+janela=uic.loadUi('interface.ui')
 janela.pushButton_turma_salvar.clicked.connect(cadastrar_turma)
 janela.pushButton_salvar.clicked.connect(cadastrar_dados_alunos)
 janela.pushButton_excluir.clicked.connect(deletar_dados)
