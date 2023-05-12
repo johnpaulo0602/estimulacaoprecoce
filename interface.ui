@@ -14,6 +14,11 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout_10">
     <item>
      <widget class="QWidget" name="widget" native="true">
@@ -53,6 +58,9 @@
               <pointsize>12</pointsize>
               <bold>true</bold>
              </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>ArrowCursor</cursorShape>
             </property>
             <property name="text">
              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:24pt; font-weight:700; color:#ffffff;&quot;&gt;Estimulação Precoce&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -103,7 +111,7 @@
              </font>
             </property>
             <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
+             <cursorShape>ArrowCursor</cursorShape>
             </property>
             <property name="styleSheet">
              <string notr="true">QWidget {
@@ -115,7 +123,6 @@ QTabBar:tab {
 	margin-right: 0.5em;
 	color: #f9f9fa;
 	border:0;
-	cursor: pointer;
 }
 
 QTabBar:tab:hover {
@@ -134,7 +141,7 @@ QTabBar:tab:selected {
              <enum>QTabWidget::North</enum>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>2</number>
             </property>
             <property name="elideMode">
              <enum>Qt::ElideNone</enum>
@@ -218,6 +225,9 @@ QTabBar:tab:selected {
               </item>
               <item>
                <widget class="QTableWidget" name="tableWidget">
+                <property name="cursor" stdset="0">
+                 <cursorShape>ArrowCursor</cursorShape>
+                </property>
                 <property name="styleSheet">
                  <string notr="true">QTableWidget {
     background-color: #f9f9fa;
@@ -279,7 +289,7 @@ QHeaderView::section {
                     </font>
                    </property>
                    <property name="cursor">
-                    <cursorShape>PointingHandCursor</cursorShape>
+                    <cursorShape>ArrowCursor</cursorShape>
                    </property>
                    <property name="styleSheet">
                     <string notr="true">QPushButton {
@@ -311,7 +321,7 @@ QPushButton:hover {
                     </font>
                    </property>
                    <property name="cursor">
-                    <cursorShape>PointingHandCursor</cursorShape>
+                    <cursorShape>ArrowCursor</cursorShape>
                    </property>
                    <property name="styleSheet">
                     <string notr="true">QPushButton {
@@ -343,7 +353,7 @@ QPushButton:hover {
                     </font>
                    </property>
                    <property name="cursor">
-                    <cursorShape>PointingHandCursor</cursorShape>
+                    <cursorShape>ArrowCursor</cursorShape>
                    </property>
                    <property name="styleSheet">
                     <string notr="true">QPushButton {
@@ -401,7 +411,7 @@ QPushButton:hover {
                 <property name="font">
                  <font>
                   <family>Roboto</family>
-                  <pointsize>12</pointsize>
+                  <pointsize>13</pointsize>
                  </font>
                 </property>
                 <property name="styleSheet">
@@ -458,7 +468,6 @@ QWidget &gt; QFrame &gt; QLineEdit {
 
 QWidget &gt; QFrame &gt; QLineEdit:focus {
   border: 1px solid #f9f9fa;
-  box-shadow: 0px 0px 0px 2px #242424;
   background-color: transparent;
 }
 
@@ -472,7 +481,6 @@ QWidget &gt; QFrame &gt; QComboBox {
 
 QWidget &gt; QFrame &gt; QComboBox:on {
  	border: 1px solid #f9f9fa;
- 	box-shadow: 0px 0px 0px 2px #242424;
  	background-color: transparent;
 }
 
@@ -509,33 +517,55 @@ QWidget &gt; QFrame &gt; QComboBox  QAbstractItemView {
                      <widget class="QLabel" name="label">
                       <property name="font">
                        <font>
-                        <family>Roboto</family>
-                        <pointsize>-1</pointsize>
+                        <family>Segoe UI</family>
+                        <pointsize>9</pointsize>
+                        <italic>false</italic>
+                        <bold>false</bold>
                        </font>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>ArrowCursor</cursorShape>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">font: 9pt &quot;Segoe UI&quot;;</string>
                       </property>
                       <property name="text">
                        <string>Nome Completo</string>
                       </property>
+                      <property name="indent">
+                       <number>2</number>
+                      </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLineEdit" name="lineEdit"/>
+                     <widget class="QLineEdit" name="line_nome"/>
                     </item>
                     <item>
                      <widget class="QLabel" name="label_2">
                       <property name="font">
                        <font>
-                        <family>Roboto</family>
-                        <pointsize>-1</pointsize>
+                        <family>Segoe UI</family>
+                        <pointsize>9</pointsize>
+                        <italic>false</italic>
+                        <bold>false</bold>
                        </font>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>ArrowCursor</cursorShape>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">font: 9pt &quot;Segoe UI&quot;;</string>
                       </property>
                       <property name="text">
                        <string>CPF</string>
                       </property>
+                      <property name="indent">
+                       <number>2</number>
+                      </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLineEdit" name="lineEdit_2">
+                     <widget class="QLineEdit" name="line_cpf">
                       <property name="inputMask">
                        <string>999.999.999-99</string>
                       </property>
@@ -545,17 +575,28 @@ QWidget &gt; QFrame &gt; QComboBox  QAbstractItemView {
                      <widget class="QLabel" name="label_3">
                       <property name="font">
                        <font>
-                        <family>Roboto</family>
-                        <pointsize>-1</pointsize>
+                        <family>Segoe UI</family>
+                        <pointsize>9</pointsize>
+                        <italic>false</italic>
+                        <bold>false</bold>
                        </font>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>ArrowCursor</cursorShape>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">font: 9pt &quot;Segoe UI&quot;;</string>
                       </property>
                       <property name="text">
                        <string>Data de Nasc</string>
                       </property>
+                      <property name="indent">
+                       <number>2</number>
+                      </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLineEdit" name="lineEdit_3">
+                     <widget class="QLineEdit" name="Line_Edit_Dt">
                       <property name="inputMask">
                        <string>99/99/9999</string>
                       </property>
@@ -565,17 +606,33 @@ QWidget &gt; QFrame &gt; QComboBox  QAbstractItemView {
                      <widget class="QLabel" name="label_4">
                       <property name="font">
                        <font>
-                        <family>Roboto</family>
-                        <pointsize>-1</pointsize>
+                        <family>Segoe UI</family>
+                        <pointsize>9</pointsize>
+                        <italic>false</italic>
+                        <bold>false</bold>
                        </font>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>ArrowCursor</cursorShape>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">font: 9pt &quot;Segoe UI&quot;;</string>
                       </property>
                       <property name="text">
                        <string>Sexo</string>
                       </property>
+                      <property name="indent">
+                       <number>2</number>
+                      </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QComboBox" name="comboBox">
+                     <widget class="QComboBox" name="combo_sexo">
+                      <property name="font">
+                       <font>
+                        <pointsize>9</pointsize>
+                       </font>
+                      </property>
                       <item>
                        <property name="text">
                         <string>M</string>
@@ -593,6 +650,9 @@ QWidget &gt; QFrame &gt; QComboBox  QAbstractItemView {
                  </item>
                  <item>
                   <widget class="QFrame" name="container_line2">
+                   <property name="cursor">
+                    <cursorShape>ArrowCursor</cursorShape>
+                   </property>
                    <property name="styleSheet">
                     <string notr="true">#container_line2{
 	margin-top: 1.5em;
@@ -617,7 +677,6 @@ height: 32px
 
 QWidget &gt; QFrame &gt; QLineEdit:focus {
   border: 1px solid #f9f9fa;
-  box-shadow: 0px 0px 0px 2px #242424;
   background-color: transparent;
 }</string>
                    </property>
@@ -641,55 +700,91 @@ QWidget &gt; QFrame &gt; QLineEdit:focus {
                      <widget class="QLabel" name="label_5">
                       <property name="font">
                        <font>
-                        <family>Roboto</family>
-                        <pointsize>-1</pointsize>
+                        <family>Segoe UI</family>
+                        <pointsize>9</pointsize>
+                        <italic>false</italic>
+                        <bold>false</bold>
                        </font>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>ArrowCursor</cursorShape>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">font: 9pt &quot;Segoe UI&quot;;</string>
                       </property>
                       <property name="text">
                        <string>Nome da Mãe</string>
                       </property>
+                      <property name="indent">
+                       <number>2</number>
+                      </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLineEdit" name="lineEdit_4"/>
+                     <widget class="QLineEdit" name="line_mae"/>
                     </item>
                     <item>
                      <widget class="QLabel" name="label_6">
                       <property name="font">
                        <font>
-                        <family>Roboto</family>
-                        <pointsize>-1</pointsize>
+                        <family>Segoe UI</family>
+                        <pointsize>9</pointsize>
+                        <italic>false</italic>
+                        <bold>false</bold>
                        </font>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>ArrowCursor</cursorShape>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">font: 9pt &quot;Segoe UI&quot;;</string>
                       </property>
                       <property name="text">
                        <string>Nome do Pai</string>
                       </property>
+                      <property name="indent">
+                       <number>2</number>
+                      </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLineEdit" name="lineEdit_5"/>
+                     <widget class="QLineEdit" name="line_pai"/>
                     </item>
                     <item>
                      <widget class="QLabel" name="label_7">
                       <property name="font">
                        <font>
-                        <family>Roboto</family>
-                        <pointsize>-1</pointsize>
+                        <family>Segoe UI</family>
+                        <pointsize>9</pointsize>
+                        <italic>false</italic>
+                        <bold>false</bold>
                        </font>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>ArrowCursor</cursorShape>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">font: 9pt &quot;Segoe UI&quot;;</string>
                       </property>
                       <property name="text">
                        <string>Matricula</string>
                       </property>
+                      <property name="indent">
+                       <number>2</number>
+                      </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLineEdit" name="lineEdit_6"/>
+                     <widget class="QLineEdit" name="line_matricula"/>
                     </item>
                    </layout>
                   </widget>
                  </item>
                  <item>
                   <widget class="QFrame" name="container_line3">
+                   <property name="cursor">
+                    <cursorShape>ArrowCursor</cursorShape>
+                   </property>
                    <property name="styleSheet">
                     <string notr="true">#container_line3{
 	margin-top: 1.5em;
@@ -714,7 +809,6 @@ height: 32px
 
 QWidget &gt; QFrame &gt; QLineEdit:focus {
   border: 1px solid #f9f9fa;
-  box-shadow: 0px 0px 0px 2px #242424;
   background-color: transparent;
 }
 
@@ -729,7 +823,6 @@ QWidget &gt; QFrame &gt; QComboBox {
 
 QWidget &gt; QFrame &gt; QComboBox:on {
  	border: 1px solid #f9f9fa;
- 	box-shadow: 0px 0px 0px 2px #242424;
  	background-color: transparent;
 }
 
@@ -766,17 +859,28 @@ QWidget &gt; QFrame &gt; QComboBox  QAbstractItemView {
                      <widget class="QLabel" name="label_8">
                       <property name="font">
                        <font>
-                        <family>Roboto</family>
-                        <pointsize>-1</pointsize>
+                        <family>Segoe UI</family>
+                        <pointsize>9</pointsize>
+                        <italic>false</italic>
+                        <bold>false</bold>
                        </font>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>ArrowCursor</cursorShape>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">font: 9pt &quot;Segoe UI&quot;;</string>
                       </property>
                       <property name="text">
                        <string>Telefone 01</string>
                       </property>
+                      <property name="indent">
+                       <number>2</number>
+                      </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLineEdit" name="lineEdit_7">
+                     <widget class="QLineEdit" name="line_telefone1">
                       <property name="inputMask">
                        <string>(99) 99999-9999</string>
                       </property>
@@ -786,17 +890,28 @@ QWidget &gt; QFrame &gt; QComboBox  QAbstractItemView {
                      <widget class="QLabel" name="label_9">
                       <property name="font">
                        <font>
-                        <family>Roboto</family>
-                        <pointsize>-1</pointsize>
+                        <family>Segoe UI</family>
+                        <pointsize>9</pointsize>
+                        <italic>false</italic>
+                        <bold>false</bold>
                        </font>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>ArrowCursor</cursorShape>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">font: 9pt &quot;Segoe UI&quot;;</string>
                       </property>
                       <property name="text">
                        <string>Telefone 02</string>
                       </property>
+                      <property name="indent">
+                       <number>2</number>
+                      </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLineEdit" name="lineEdit_8">
+                     <widget class="QLineEdit" name="line_telefone2">
                       <property name="inputMask">
                        <string>(99) 99999-9999</string>
                       </property>
@@ -806,33 +921,55 @@ QWidget &gt; QFrame &gt; QComboBox  QAbstractItemView {
                      <widget class="QLabel" name="label_10">
                       <property name="font">
                        <font>
-                        <family>Roboto</family>
-                        <pointsize>-1</pointsize>
+                        <family>Segoe UI</family>
+                        <pointsize>9</pointsize>
+                        <italic>false</italic>
+                        <bold>false</bold>
                        </font>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>ArrowCursor</cursorShape>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">font: 9pt &quot;Segoe UI&quot;;</string>
                       </property>
                       <property name="text">
                        <string>Naturalidade</string>
                       </property>
+                      <property name="indent">
+                       <number>2</number>
+                      </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLineEdit" name="lineEdit_9"/>
+                     <widget class="QLineEdit" name="line_naturalidade"/>
                     </item>
                     <item>
                      <widget class="QLabel" name="label_11">
                       <property name="font">
                        <font>
-                        <family>Roboto</family>
-                        <pointsize>-1</pointsize>
+                        <family>Segoe UI</family>
+                        <pointsize>9</pointsize>
+                        <italic>false</italic>
+                        <bold>false</bold>
                        </font>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>ArrowCursor</cursorShape>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">font: 9pt &quot;Segoe UI&quot;;</string>
                       </property>
                       <property name="text">
                        <string>UF</string>
                       </property>
+                      <property name="indent">
+                       <number>2</number>
+                      </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QComboBox" name="comboBox_2">
+                     <widget class="QComboBox" name="combo_uf">
                       <item>
                        <property name="text">
                         <string>GO</string>
@@ -897,7 +1034,6 @@ height: 32px
 
 QWidget &gt; QFrame &gt; QLineEdit:focus {
   border: 1px solid #f9f9fa;
-  box-shadow: 0px 0px 0px 2px #242424;
   background-color: transparent;
 }
 
@@ -912,7 +1048,6 @@ QWidget &gt; QFrame &gt; QComboBox {
 
 QWidget &gt; QFrame &gt; QComboBox:on {
  	border: 1px solid #f9f9fa;
- 	box-shadow: 0px 0px 0px 2px #242424;
  	background-color: transparent;
 }
 
@@ -987,6 +1122,9 @@ QWidget &gt; QFrame &gt; QTextEdit:focus {
                        </property>
                        <item>
                         <widget class="QFrame" name="container_horizontal2">
+                         <property name="cursor">
+                          <cursorShape>ArrowCursor</cursorShape>
+                         </property>
                          <property name="styleSheet">
                           <string notr="true">QWidget &gt; QFrame{
 
@@ -1010,7 +1148,6 @@ height: 32px
 
 QWidget &gt; QFrame &gt; QLineEdit:focus {
   border: 1px solid #f9f9fa;
-  box-shadow: 0px 0px 0px 2px #242424;
   background-color: transparent;
 }</string>
                          </property>
@@ -1034,39 +1171,64 @@ QWidget &gt; QFrame &gt; QLineEdit:focus {
                            <widget class="QLabel" name="label_15">
                             <property name="font">
                              <font>
-                              <family>Roboto</family>
-                              <pointsize>-1</pointsize>
+                              <family>Segoe UI</family>
+                              <pointsize>9</pointsize>
+                              <italic>false</italic>
+                              <bold>false</bold>
                              </font>
+                            </property>
+                            <property name="cursor">
+                             <cursorShape>ArrowCursor</cursorShape>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">font: 9pt &quot;Segoe UI&quot;;</string>
                             </property>
                             <property name="text">
                              <string>Endereço</string>
                             </property>
+                            <property name="indent">
+                             <number>2</number>
+                            </property>
                            </widget>
                           </item>
                           <item>
-                           <widget class="QLineEdit" name="lineEdit_10"/>
+                           <widget class="QLineEdit" name="line_endereco"/>
                           </item>
                           <item>
                            <widget class="QLabel" name="label_16">
                             <property name="font">
                              <font>
-                              <family>Roboto</family>
-                              <pointsize>-1</pointsize>
+                              <family>Segoe UI</family>
+                              <pointsize>9</pointsize>
+                              <italic>false</italic>
+                              <bold>false</bold>
                              </font>
+                            </property>
+                            <property name="toolTipDuration">
+                             <number>7</number>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">font: 9pt &quot;Segoe UI&quot;;</string>
                             </property>
                             <property name="text">
                              <string>Nº</string>
                             </property>
+                            <property name="indent">
+                             <number>2</number>
+                            </property>
                            </widget>
                           </item>
                           <item>
-                           <widget class="QLineEdit" name="lineEdit_11"/>
+                           <widget class="QLineEdit" name="line_numero"/>
                           </item>
                          </layout>
                         </widget>
                        </item>
                        <item>
                         <widget class="QFrame" name="container_horizontal1">
+                         <property name="cursor">
+                          <cursorShape>ArrowCursor</cursorShape>
+                         </property>
                          <property name="styleSheet">
                           <string notr="true">QWidget &gt; QFrame{
 
@@ -1090,7 +1252,6 @@ height: 32px
 
 QWidget &gt; QFrame &gt; QLineEdit:focus {
   border: 1px solid #f9f9fa;
-  box-shadow: 0px 0px 0px 2px #242424;
   background-color: transparent;
 }</string>
                          </property>
@@ -1114,17 +1275,28 @@ QWidget &gt; QFrame &gt; QLineEdit:focus {
                            <widget class="QLabel" name="label_13">
                             <property name="font">
                              <font>
-                              <family>Roboto</family>
-                              <pointsize>-1</pointsize>
+                              <family>Segoe UI</family>
+                              <pointsize>9</pointsize>
+                              <italic>false</italic>
+                              <bold>false</bold>
                              </font>
+                            </property>
+                            <property name="cursor">
+                             <cursorShape>ArrowCursor</cursorShape>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">font: 9pt &quot;Segoe UI&quot;;</string>
                             </property>
                             <property name="text">
                              <string>Professora</string>
                             </property>
+                            <property name="indent">
+                             <number>2</number>
+                            </property>
                            </widget>
                           </item>
                           <item>
-                           <widget class="QComboBox" name="comboBox_3">
+                           <widget class="QComboBox" name="combo_professora">
                             <item>
                              <property name="text">
                               <string>Maria</string>
@@ -1151,17 +1323,31 @@ QWidget &gt; QFrame &gt; QLineEdit:focus {
                            <widget class="QLabel" name="label_14">
                             <property name="font">
                              <font>
-                              <family>Roboto</family>
-                              <pointsize>-1</pointsize>
+                              <family>Segoe UI</family>
+                              <pointsize>9</pointsize>
+                              <italic>false</italic>
+                              <bold>false</bold>
                              </font>
+                            </property>
+                            <property name="cursor">
+                             <cursorShape>ArrowCursor</cursorShape>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">font: 9pt &quot;Segoe UI&quot;;</string>
                             </property>
                             <property name="text">
                              <string>Turma</string>
                             </property>
+                            <property name="indent">
+                             <number>2</number>
+                            </property>
                            </widget>
                           </item>
                           <item>
-                           <widget class="QComboBox" name="comboBox_4">
+                           <widget class="QComboBox" name="combo_turma">
+                            <property name="cursor">
+                             <cursorShape>ArrowCursor</cursorShape>
+                            </property>
                             <item>
                              <property name="text">
                               <string>A</string>
@@ -1189,6 +1375,9 @@ QWidget &gt; QFrame &gt; QLineEdit:focus {
                        </item>
                        <item>
                         <widget class="QFrame" name="container_horizontal3">
+                         <property name="cursor">
+                          <cursorShape>ArrowCursor</cursorShape>
+                         </property>
                          <property name="styleSheet">
                           <string notr="true">QWidget &gt; QFrame{
 
@@ -1212,7 +1401,6 @@ height: 32px
 
 QWidget &gt; QFrame &gt; QLineEdit:focus {
   border: 1px solid #f9f9fa;
-  box-shadow: 0px 0px 0px 2px #242424;
   background-color: transparent;
 }</string>
                          </property>
@@ -1236,49 +1424,79 @@ QWidget &gt; QFrame &gt; QLineEdit:focus {
                            <widget class="QLabel" name="label_17">
                             <property name="font">
                              <font>
-                              <family>Roboto</family>
-                              <pointsize>-1</pointsize>
+                              <family>Segoe UI</family>
+                              <pointsize>9</pointsize>
+                              <italic>false</italic>
+                              <bold>false</bold>
                              </font>
+                            </property>
+                            <property name="cursor">
+                             <cursorShape>ArrowCursor</cursorShape>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">font: 9pt &quot;Segoe UI&quot;;</string>
                             </property>
                             <property name="text">
                              <string>Cidade</string>
                             </property>
+                            <property name="indent">
+                             <number>2</number>
+                            </property>
                            </widget>
                           </item>
                           <item>
-                           <widget class="QLineEdit" name="lineEdit_12"/>
+                           <widget class="QLineEdit" name="line_cidade"/>
                           </item>
                           <item>
                            <widget class="QLabel" name="label_18">
                             <property name="font">
                              <font>
-                              <family>Roboto</family>
-                              <pointsize>-1</pointsize>
+                              <family>Segoe UI</family>
+                              <pointsize>9</pointsize>
+                              <italic>false</italic>
+                              <bold>false</bold>
                              </font>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">font: 9pt &quot;Segoe UI&quot;;</string>
                             </property>
                             <property name="text">
                              <string>UF</string>
                             </property>
+                            <property name="indent">
+                             <number>2</number>
+                            </property>
                            </widget>
                           </item>
                           <item>
-                           <widget class="QLineEdit" name="lineEdit_13"/>
+                           <widget class="QLineEdit" name="line_uf"/>
                           </item>
                           <item>
                            <widget class="QLabel" name="label_19">
                             <property name="font">
                              <font>
-                              <family>Roboto</family>
-                              <pointsize>-1</pointsize>
+                              <family>Segoe UI</family>
+                              <pointsize>9</pointsize>
+                              <italic>false</italic>
+                              <bold>false</bold>
                              </font>
+                            </property>
+                            <property name="cursor">
+                             <cursorShape>ArrowCursor</cursorShape>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">font: 9pt &quot;Segoe UI&quot;;</string>
                             </property>
                             <property name="text">
                              <string>CEP</string>
                             </property>
+                            <property name="indent">
+                             <number>2</number>
+                            </property>
                            </widget>
                           </item>
                           <item>
-                           <widget class="QLineEdit" name="lineEdit_14"/>
+                           <widget class="QLineEdit" name="line_cep"/>
                           </item>
                          </layout>
                         </widget>
@@ -1288,6 +1506,9 @@ QWidget &gt; QFrame &gt; QLineEdit:focus {
                     </item>
                     <item>
                      <widget class="QFrame" name="container_vertical1">
+                      <property name="cursor">
+                       <cursorShape>ArrowCursor</cursorShape>
+                      </property>
                       <property name="styleSheet">
                        <string notr="true"/>
                       </property>
@@ -1311,17 +1532,29 @@ QWidget &gt; QFrame &gt; QLineEdit:focus {
                         <widget class="QLabel" name="label_12">
                          <property name="font">
                           <font>
-                           <family>Roboto</family>
-                           <pointsize>-1</pointsize>
+                           <family>Segoe UI</family>
+                           <pointsize>9</pointsize>
+                           <italic>false</italic>
+                           <bold>false</bold>
                           </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">font: 9pt &quot;Segoe UI&quot;;</string>
                          </property>
                          <property name="text">
                           <string>Hipótese Diagnóstica</string>
                          </property>
+                         <property name="indent">
+                          <number>2</number>
+                         </property>
                         </widget>
                        </item>
                        <item>
-                        <widget class="QTextEdit" name="textEdit"/>
+                        <widget class="QTextEdit" name="line_hipotese">
+                         <property name="cursor" stdset="0">
+                          <cursorShape>ArrowCursor</cursorShape>
+                         </property>
+                        </widget>
                        </item>
                       </layout>
                      </widget>
@@ -1331,6 +1564,9 @@ QWidget &gt; QFrame &gt; QLineEdit:focus {
                  </item>
                  <item>
                   <widget class="QFrame" name="container_salvar">
+                   <property name="cursor">
+                    <cursorShape>ArrowCursor</cursorShape>
+                   </property>
                    <property name="styleSheet">
                     <string notr="true">#container_salvar{
 	padding: 0;
@@ -1381,7 +1617,7 @@ QWidget &gt; QFrame &gt; QLineEdit:focus {
                        </font>
                       </property>
                       <property name="cursor">
-                       <cursorShape>PointingHandCursor</cursorShape>
+                       <cursorShape>ArrowCursor</cursorShape>
                       </property>
                       <property name="styleSheet">
                        <string notr="true">QPushButton {
@@ -1454,6 +1690,9 @@ QPushButton:hover {
                  </property>
                  <item>
                   <widget class="QFrame" name="turma_line1_2">
+                   <property name="cursor">
+                    <cursorShape>ArrowCursor</cursorShape>
+                   </property>
                    <property name="styleSheet">
                     <string notr="true">#turma_line1_2{
 	padding: 0;
@@ -1477,7 +1716,6 @@ QWidget &gt; QFrame &gt; QLineEdit {
 
 QWidget &gt; QFrame &gt; QLineEdit:focus {
   border: 1px solid #f9f9fa;
-  box-shadow: 0px 0px 0px 2px #242424;
   background-color: transparent;
 }
 
@@ -1491,7 +1729,6 @@ QWidget &gt; QFrame &gt; QComboBox {
 
 QWidget &gt; QFrame &gt; QComboBox:on {
  	border: 1px solid #f9f9fa;
- 	box-shadow: 0px 0px 0px 2px #242424;
  	background-color: transparent;
 }
 
@@ -1528,10 +1765,14 @@ QWidget &gt; QFrame &gt; QComboBox  QAbstractItemView {
                      <widget class="QLabel" name="label_20">
                       <property name="font">
                        <font>
-                        <family>Roboto</family>
-                        <pointsize>-1</pointsize>
+                        <family>Segoe UI</family>
+                        <pointsize>9</pointsize>
+                        <italic>false</italic>
                         <bold>false</bold>
                        </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">font: 9pt &quot;Segoe UI&quot;;</string>
                       </property>
                       <property name="text">
                        <string>Nome da Turma</string>
@@ -1539,16 +1780,20 @@ QWidget &gt; QFrame &gt; QComboBox  QAbstractItemView {
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLineEdit" name="lineEdit_15"/>
+                     <widget class="QLineEdit" name="line_turma"/>
                     </item>
                     <item>
                      <widget class="QLabel" name="label_21">
                       <property name="font">
                        <font>
-                        <family>Roboto</family>
-                        <pointsize>-1</pointsize>
+                        <family>Segoe UI</family>
+                        <pointsize>9</pointsize>
+                        <italic>false</italic>
                         <bold>false</bold>
                        </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">font: 9pt &quot;Segoe UI&quot;;</string>
                       </property>
                       <property name="text">
                        <string>Nome da Professora</string>
@@ -1556,16 +1801,20 @@ QWidget &gt; QFrame &gt; QComboBox  QAbstractItemView {
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLineEdit" name="lineEdit_16"/>
+                     <widget class="QLineEdit" name="line_professora"/>
                     </item>
                     <item>
                      <widget class="QLabel" name="label_22">
                       <property name="font">
                        <font>
-                        <family>Roboto</family>
-                        <pointsize>-1</pointsize>
+                        <family>Segoe UI</family>
+                        <pointsize>9</pointsize>
+                        <italic>false</italic>
                         <bold>false</bold>
                        </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">font: 9pt &quot;Segoe UI&quot;;</string>
                       </property>
                       <property name="text">
                        <string>Turno</string>
@@ -1573,7 +1822,7 @@ QWidget &gt; QFrame &gt; QComboBox  QAbstractItemView {
                      </widget>
                     </item>
                     <item>
-                     <widget class="QComboBox" name="comboBox_5">
+                     <widget class="QComboBox" name="combo_turno">
                       <item>
                        <property name="text">
                         <string>Matutino</string>
@@ -1626,7 +1875,7 @@ QWidget &gt; QFrame &gt; QComboBox  QAbstractItemView {
                      </spacer>
                     </item>
                     <item>
-                     <widget class="QPushButton" name="pushButton">
+                     <widget class="QPushButton" name="pushButton_turma_salvar">
                       <property name="font">
                        <font>
                         <family>Roboto Black</family>
