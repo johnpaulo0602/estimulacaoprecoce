@@ -6,6 +6,8 @@ USE Estimulacao_Precoce;
 CREATE TABLE Alunos(
   IdAluno int primary key not null auto_increment,
   NomeCompleto varchar (50) not null,
+  Telefone1 varchar(20) not null,
+  Telefone2 varchar(20) not null,
   CPF varchar (20) not null unique,
   DataNascimento date not null,
   Sexo varchar (15) not null,
@@ -20,8 +22,7 @@ CREATE TABLE Turma(
   IdTurma int primary key not null auto_increment,
   Identificacao varchar (30) not null,
   Turno varchar (20) not null,
-  Professor varchar (50) not null,
-  foreign key (Professor) references Professor(NomeCompleto)
+  Professor varchar (50) not null
 );
 
 -- Criando tabela AlunoTurma com informações de alunos associados a turmas
@@ -39,10 +40,8 @@ CREATE TABLE AlunoTurma (
 CREATE TABLE Professor(
   IdProfessor int primary key not null auto_increment,
   NomeCompleto varchar(50) not null,
-  CPF varchar (20) not null unique,
-  Turma varchar (20) not null,
-  Telefone varchar(20) not null,
-  foreign key (Turma) references Turma(Identificacao)
+  IdTurma int not null,
+  foreign key (IdTurma) references Turma(IdTurma)
 );
 
 -- Criando tabela Endereco com informações dos endereços
@@ -50,7 +49,6 @@ CREATE TABLE Professor(
 CREATE TABLE endereco (
   idEndereco int primary key not null auto_increment,
   Cidade varchar (30) not null,
-  Bairro varchar (50) not null,
   Numero varchar (10) not null,
   UF varchar (5) not null,
   Endereco varchar (130) not null,
