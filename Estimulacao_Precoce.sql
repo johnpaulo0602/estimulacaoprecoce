@@ -54,7 +54,7 @@ CREATE TABLE endereco (
   Numero varchar (10) not null,
   UF varchar (5) not null,
   Endereco varchar (130) not null,
-  CEP varchar (20) not null unique
+  CEP varchar (20) not null
 );
 
 -- Criando tabela AlunoEndereco com informações de alunos associados a endereços
