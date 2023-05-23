@@ -12,8 +12,11 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(891, 633)
+        MainWindow.resize(923, 658)
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.centralwidget.setFont(font)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout_10 = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout_10.setObjectName("verticalLayout_10")
@@ -40,6 +43,7 @@ class Ui_MainWindow(object):
         font.setPointSize(12)
         font.setBold(True)
         self.main_title.setFont(font)
+        self.main_title.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
         self.main_title.setObjectName("main_title")
         self.horizontalLayout.addWidget(self.main_title)
         self.verticalLayout_2.addWidget(self.frame_main)
@@ -72,7 +76,6 @@ class Ui_MainWindow(object):
 "    margin-right: 0.5em;\n"
 "    color: #f9f9fa;\n"
 "    border:0;\n"
-"    cursor: pointer;\n"
 "}\n"
 "\n"
 "QTabBar:tab:hover {\n"
@@ -92,22 +95,22 @@ class Ui_MainWindow(object):
         self.tabWidget.setDocumentMode(True)
         self.tabWidget.setTabBarAutoHide(False)
         self.tabWidget.setObjectName("tabWidget")
-        self.home = QtWidgets.QWidget()
-        self.home.setMinimumSize(QtCore.QSize(753, 0))
+        self.tab_home = QtWidgets.QWidget()
+        self.tab_home.setMinimumSize(QtCore.QSize(753, 0))
         font = QtGui.QFont()
         font.setFamily("Roboto")
         font.setPointSize(16)
-        self.home.setFont(font)
-        self.home.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
-        self.home.setFocusPolicy(QtCore.Qt.FocusPolicy.NoFocus)
-        self.home.setStyleSheet("")
-        self.home.setObjectName("home")
-        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.home)
+        self.tab_home.setFont(font)
+        self.tab_home.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
+        self.tab_home.setFocusPolicy(QtCore.Qt.FocusPolicy.NoFocus)
+        self.tab_home.setStyleSheet("")
+        self.tab_home.setObjectName("tab_home")
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.tab_home)
         self.verticalLayout_4.setSizeConstraint(QtWidgets.QLayout.SizeConstraint.SetDefaultConstraint)
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_4.setSpacing(0)
         self.verticalLayout_4.setObjectName("verticalLayout_4")
-        self.line_search = QtWidgets.QLineEdit(parent=self.home)
+        self.line_search = QtWidgets.QLineEdit(parent=self.tab_home)
         font = QtGui.QFont()
         font.setFamily("Poppins")
         font.setPointSize(12)
@@ -123,7 +126,8 @@ class Ui_MainWindow(object):
 "}")
         self.line_search.setObjectName("line_search")
         self.verticalLayout_4.addWidget(self.line_search)
-        self.tableWidget = QtWidgets.QTableWidget(parent=self.home)
+        self.tableWidget = QtWidgets.QTableWidget(parent=self.tab_home)
+        self.tableWidget.viewport().setProperty("cursor", QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
         self.tableWidget.setStyleSheet("QTableWidget {\n"
 "    background-color: #f9f9fa;\n"
 "    margin-top: 2em;\n"
@@ -138,7 +142,7 @@ class Ui_MainWindow(object):
         self.tableWidget.setColumnCount(0)
         self.tableWidget.setRowCount(0)
         self.verticalLayout_4.addWidget(self.tableWidget)
-        self.frame = QtWidgets.QFrame(parent=self.home)
+        self.frame = QtWidgets.QFrame(parent=self.tab_home)
         self.frame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame.setObjectName("frame")
@@ -149,6 +153,12 @@ class Ui_MainWindow(object):
         spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem)
         self.pushButton_visualizar = QtWidgets.QPushButton(parent=self.frame)
+        font = QtGui.QFont()
+        font.setFamily("Roboto Black")
+        font.setPointSize(12)
+        font.setBold(True)
+        self.pushButton_visualizar.setFont(font)
+        self.pushButton_visualizar.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
         self.pushButton_visualizar.setStyleSheet("QPushButton {\n"
 "    background-color: #404bda;\n"
 "    padding: 0.5em 2em;\n"
@@ -165,6 +175,12 @@ class Ui_MainWindow(object):
         self.pushButton_visualizar.setObjectName("pushButton_visualizar")
         self.horizontalLayout_2.addWidget(self.pushButton_visualizar)
         self.pushButton_editar = QtWidgets.QPushButton(parent=self.frame)
+        font = QtGui.QFont()
+        font.setFamily("Roboto Black")
+        font.setPointSize(12)
+        font.setBold(True)
+        self.pushButton_editar.setFont(font)
+        self.pushButton_editar.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
         self.pushButton_editar.setStyleSheet("QPushButton {\n"
 "    background-color: #f9f9fa;\n"
 "    padding: 0.5em 2em;\n"
@@ -181,6 +197,12 @@ class Ui_MainWindow(object):
         self.pushButton_editar.setObjectName("pushButton_editar")
         self.horizontalLayout_2.addWidget(self.pushButton_editar)
         self.pushButton_excluir = QtWidgets.QPushButton(parent=self.frame)
+        font = QtGui.QFont()
+        font.setFamily("Roboto Black")
+        font.setPointSize(12)
+        font.setBold(True)
+        self.pushButton_excluir.setFont(font)
+        self.pushButton_excluir.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
         self.pushButton_excluir.setStyleSheet("QPushButton {\n"
 "    background-color: #ee0125;\n"
 "    padding: 0.5em 2em;\n"
@@ -201,23 +223,35 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.setStretch(2, 4)
         self.horizontalLayout_2.setStretch(3, 4)
         self.verticalLayout_4.addWidget(self.frame)
-        self.tabWidget.addTab(self.home, "")
-        self.Cadastro = QtWidgets.QWidget()
-        self.Cadastro.setFocusPolicy(QtCore.Qt.FocusPolicy.NoFocus)
-        self.Cadastro.setStyleSheet("")
-        self.Cadastro.setObjectName("Cadastro")
-        self.verticalLayout = QtWidgets.QVBoxLayout(self.Cadastro)
+        self.tabWidget.addTab(self.tab_home, "")
+        self.tab_cadastro = QtWidgets.QWidget()
+        self.tab_cadastro.setFocusPolicy(QtCore.Qt.FocusPolicy.NoFocus)
+        self.tab_cadastro.setStyleSheet("")
+        self.tab_cadastro.setObjectName("tab_cadastro")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.tab_cadastro)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.container_cadastro = QtWidgets.QFrame(parent=self.Cadastro)
-        self.container_cadastro.setStyleSheet("")
+        self.container_cadastro = QtWidgets.QFrame(parent=self.tab_cadastro)
+        font = QtGui.QFont()
+        font.setFamily("Roboto")
+        font.setPointSize(13)
+        self.container_cadastro.setFont(font)
+        self.container_cadastro.setStyleSheet("#container_cadastro {\n"
+"    padding: 0;\n"
+"}")
         self.container_cadastro.setObjectName("container_cadastro")
         self.cadastroVertical_1 = QtWidgets.QVBoxLayout(self.container_cadastro)
         self.cadastroVertical_1.setContentsMargins(0, 0, 0, 0)
         self.cadastroVertical_1.setSpacing(0)
         self.cadastroVertical_1.setObjectName("cadastroVertical_1")
         self.container_line1 = QtWidgets.QFrame(parent=self.container_cadastro)
+        font = QtGui.QFont()
+        font.setFamily("Roboto")
+        font.setPointSize(12)
+        font.setBold(False)
+        font.setItalic(False)
+        self.container_line1.setFont(font)
         self.container_line1.setStyleSheet("#container_line1{\n"
 "    padding: 0;\n"
 "}\n"
@@ -240,7 +274,6 @@ class Ui_MainWindow(object):
 "\n"
 "QWidget > QFrame > QLineEdit:focus {\n"
 "  border: 1px solid #f9f9fa;\n"
-"  box-shadow: 0px 0px 0px 2px #242424;\n"
 "  background-color: transparent;\n"
 "}\n"
 "\n"
@@ -254,7 +287,6 @@ class Ui_MainWindow(object):
 "\n"
 "QWidget > QFrame > QComboBox:on {\n"
 "     border: 1px solid #f9f9fa;\n"
-"     box-shadow: 0px 0px 0px 2px #242424;\n"
 "     background-color: transparent;\n"
 "}\n"
 "\n"
@@ -276,37 +308,77 @@ class Ui_MainWindow(object):
         self.cadastroHorizontal_1.setSpacing(8)
         self.cadastroHorizontal_1.setObjectName("cadastroHorizontal_1")
         self.label = QtWidgets.QLabel(parent=self.container_line1)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(9)
+        font.setBold(False)
+        font.setItalic(False)
+        self.label.setFont(font)
+        self.label.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
+        self.label.setStyleSheet("font: 9pt \"Segoe UI\";")
+        self.label.setIndent(2)
         self.label.setObjectName("label")
         self.cadastroHorizontal_1.addWidget(self.label)
-        self.lineEdit = QtWidgets.QLineEdit(parent=self.container_line1)
-        self.lineEdit.setObjectName("lineEdit")
-        self.cadastroHorizontal_1.addWidget(self.lineEdit)
+        self.line_nome = QtWidgets.QLineEdit(parent=self.container_line1)
+        self.line_nome.setObjectName("line_nome")
+        self.cadastroHorizontal_1.addWidget(self.line_nome)
         self.label_2 = QtWidgets.QLabel(parent=self.container_line1)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(9)
+        font.setBold(False)
+        font.setItalic(False)
+        self.label_2.setFont(font)
+        self.label_2.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
+        self.label_2.setStyleSheet("font: 9pt \"Segoe UI\";")
+        self.label_2.setIndent(2)
         self.label_2.setObjectName("label_2")
         self.cadastroHorizontal_1.addWidget(self.label_2)
-        self.lineEdit_2 = QtWidgets.QLineEdit(parent=self.container_line1)
-        self.lineEdit_2.setObjectName("lineEdit_2")
-        self.cadastroHorizontal_1.addWidget(self.lineEdit_2)
+        self.line_cpf = QtWidgets.QLineEdit(parent=self.container_line1)
+        self.line_cpf.setObjectName("line_cpf")
+        self.cadastroHorizontal_1.addWidget(self.line_cpf)
         self.label_3 = QtWidgets.QLabel(parent=self.container_line1)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(9)
+        font.setBold(False)
+        font.setItalic(False)
+        self.label_3.setFont(font)
+        self.label_3.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
+        self.label_3.setStyleSheet("font: 9pt \"Segoe UI\";")
+        self.label_3.setIndent(2)
         self.label_3.setObjectName("label_3")
         self.cadastroHorizontal_1.addWidget(self.label_3)
-        self.lineEdit_3 = QtWidgets.QLineEdit(parent=self.container_line1)
-        self.lineEdit_3.setObjectName("lineEdit_3")
-        self.cadastroHorizontal_1.addWidget(self.lineEdit_3)
+        self.Line_Edit_Dt = QtWidgets.QLineEdit(parent=self.container_line1)
+        self.Line_Edit_Dt.setObjectName("Line_Edit_Dt")
+        self.cadastroHorizontal_1.addWidget(self.Line_Edit_Dt)
         self.label_4 = QtWidgets.QLabel(parent=self.container_line1)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(9)
+        font.setBold(False)
+        font.setItalic(False)
+        self.label_4.setFont(font)
+        self.label_4.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
+        self.label_4.setStyleSheet("font: 9pt \"Segoe UI\";")
+        self.label_4.setIndent(2)
         self.label_4.setObjectName("label_4")
         self.cadastroHorizontal_1.addWidget(self.label_4)
-        self.comboBox = QtWidgets.QComboBox(parent=self.container_line1)
-        self.comboBox.setObjectName("comboBox")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.cadastroHorizontal_1.addWidget(self.comboBox)
+        self.combo_sexo = QtWidgets.QComboBox(parent=self.container_line1)
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.combo_sexo.setFont(font)
+        self.combo_sexo.setObjectName("combo_sexo")
+        self.combo_sexo.addItem("")
+        self.combo_sexo.addItem("")
+        self.cadastroHorizontal_1.addWidget(self.combo_sexo)
         self.cadastroHorizontal_1.setStretch(1, 4)
         self.cadastroHorizontal_1.setStretch(3, 3)
         self.cadastroHorizontal_1.setStretch(5, 2)
         self.cadastroHorizontal_1.setStretch(7, 1)
         self.cadastroVertical_1.addWidget(self.container_line1)
         self.container_line2 = QtWidgets.QFrame(parent=self.container_cadastro)
+        self.container_line2.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
         self.container_line2.setStyleSheet("#container_line2{\n"
 "    margin-top: 1.5em;\n"
 "    padding: 0;\n"
@@ -330,7 +402,6 @@ class Ui_MainWindow(object):
 "\n"
 "QWidget > QFrame > QLineEdit:focus {\n"
 "  border: 1px solid #f9f9fa;\n"
-"  box-shadow: 0px 0px 0px 2px #242424;\n"
 "  background-color: transparent;\n"
 "}")
         self.container_line2.setObjectName("container_line2")
@@ -339,28 +410,56 @@ class Ui_MainWindow(object):
         self.cadastroHorizontal_2.setSpacing(8)
         self.cadastroHorizontal_2.setObjectName("cadastroHorizontal_2")
         self.label_5 = QtWidgets.QLabel(parent=self.container_line2)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(9)
+        font.setBold(False)
+        font.setItalic(False)
+        self.label_5.setFont(font)
+        self.label_5.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
+        self.label_5.setStyleSheet("font: 9pt \"Segoe UI\";")
+        self.label_5.setIndent(2)
         self.label_5.setObjectName("label_5")
         self.cadastroHorizontal_2.addWidget(self.label_5)
-        self.lineEdit_4 = QtWidgets.QLineEdit(parent=self.container_line2)
-        self.lineEdit_4.setObjectName("lineEdit_4")
-        self.cadastroHorizontal_2.addWidget(self.lineEdit_4)
+        self.line_mae = QtWidgets.QLineEdit(parent=self.container_line2)
+        self.line_mae.setObjectName("line_mae")
+        self.cadastroHorizontal_2.addWidget(self.line_mae)
         self.label_6 = QtWidgets.QLabel(parent=self.container_line2)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(9)
+        font.setBold(False)
+        font.setItalic(False)
+        self.label_6.setFont(font)
+        self.label_6.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
+        self.label_6.setStyleSheet("font: 9pt \"Segoe UI\";")
+        self.label_6.setIndent(2)
         self.label_6.setObjectName("label_6")
         self.cadastroHorizontal_2.addWidget(self.label_6)
-        self.lineEdit_5 = QtWidgets.QLineEdit(parent=self.container_line2)
-        self.lineEdit_5.setObjectName("lineEdit_5")
-        self.cadastroHorizontal_2.addWidget(self.lineEdit_5)
+        self.line_pai = QtWidgets.QLineEdit(parent=self.container_line2)
+        self.line_pai.setObjectName("line_pai")
+        self.cadastroHorizontal_2.addWidget(self.line_pai)
         self.label_7 = QtWidgets.QLabel(parent=self.container_line2)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(9)
+        font.setBold(False)
+        font.setItalic(False)
+        self.label_7.setFont(font)
+        self.label_7.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
+        self.label_7.setStyleSheet("font: 9pt \"Segoe UI\";")
+        self.label_7.setIndent(2)
         self.label_7.setObjectName("label_7")
         self.cadastroHorizontal_2.addWidget(self.label_7)
-        self.lineEdit_6 = QtWidgets.QLineEdit(parent=self.container_line2)
-        self.lineEdit_6.setObjectName("lineEdit_6")
-        self.cadastroHorizontal_2.addWidget(self.lineEdit_6)
+        self.line_matricula = QtWidgets.QLineEdit(parent=self.container_line2)
+        self.line_matricula.setObjectName("line_matricula")
+        self.cadastroHorizontal_2.addWidget(self.line_matricula)
         self.cadastroHorizontal_2.setStretch(1, 4)
         self.cadastroHorizontal_2.setStretch(3, 4)
         self.cadastroHorizontal_2.setStretch(5, 4)
         self.cadastroVertical_1.addWidget(self.container_line2)
         self.container_line3 = QtWidgets.QFrame(parent=self.container_cadastro)
+        self.container_line3.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
         self.container_line3.setStyleSheet("#container_line3{\n"
 "    margin-top: 1.5em;\n"
 "    padding: 0;\n"
@@ -384,7 +483,6 @@ class Ui_MainWindow(object):
 "\n"
 "QWidget > QFrame > QLineEdit:focus {\n"
 "  border: 1px solid #f9f9fa;\n"
-"  box-shadow: 0px 0px 0px 2px #242424;\n"
 "  background-color: transparent;\n"
 "}\n"
 "\n"
@@ -399,7 +497,6 @@ class Ui_MainWindow(object):
 "\n"
 "QWidget > QFrame > QComboBox:on {\n"
 "     border: 1px solid #f9f9fa;\n"
-"     box-shadow: 0px 0px 0px 2px #242424;\n"
 "     background-color: transparent;\n"
 "}\n"
 "\n"
@@ -421,34 +518,70 @@ class Ui_MainWindow(object):
         self.cadastroHorizontal_3.setSpacing(8)
         self.cadastroHorizontal_3.setObjectName("cadastroHorizontal_3")
         self.label_8 = QtWidgets.QLabel(parent=self.container_line3)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(9)
+        font.setBold(False)
+        font.setItalic(False)
+        self.label_8.setFont(font)
+        self.label_8.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
+        self.label_8.setStyleSheet("font: 9pt \"Segoe UI\";")
+        self.label_8.setIndent(2)
         self.label_8.setObjectName("label_8")
         self.cadastroHorizontal_3.addWidget(self.label_8)
-        self.lineEdit_7 = QtWidgets.QLineEdit(parent=self.container_line3)
-        self.lineEdit_7.setObjectName("lineEdit_7")
-        self.cadastroHorizontal_3.addWidget(self.lineEdit_7)
+        self.line_telefone1 = QtWidgets.QLineEdit(parent=self.container_line3)
+        self.line_telefone1.setObjectName("line_telefone1")
+        self.cadastroHorizontal_3.addWidget(self.line_telefone1)
         self.label_9 = QtWidgets.QLabel(parent=self.container_line3)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(9)
+        font.setBold(False)
+        font.setItalic(False)
+        self.label_9.setFont(font)
+        self.label_9.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
+        self.label_9.setStyleSheet("font: 9pt \"Segoe UI\";")
+        self.label_9.setIndent(2)
         self.label_9.setObjectName("label_9")
         self.cadastroHorizontal_3.addWidget(self.label_9)
-        self.lineEdit_8 = QtWidgets.QLineEdit(parent=self.container_line3)
-        self.lineEdit_8.setObjectName("lineEdit_8")
-        self.cadastroHorizontal_3.addWidget(self.lineEdit_8)
+        self.line_telefone2 = QtWidgets.QLineEdit(parent=self.container_line3)
+        self.line_telefone2.setObjectName("line_telefone2")
+        self.cadastroHorizontal_3.addWidget(self.line_telefone2)
         self.label_10 = QtWidgets.QLabel(parent=self.container_line3)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(9)
+        font.setBold(False)
+        font.setItalic(False)
+        self.label_10.setFont(font)
+        self.label_10.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
+        self.label_10.setStyleSheet("font: 9pt \"Segoe UI\";")
+        self.label_10.setIndent(2)
         self.label_10.setObjectName("label_10")
         self.cadastroHorizontal_3.addWidget(self.label_10)
-        self.lineEdit_9 = QtWidgets.QLineEdit(parent=self.container_line3)
-        self.lineEdit_9.setObjectName("lineEdit_9")
-        self.cadastroHorizontal_3.addWidget(self.lineEdit_9)
+        self.line_naturalidade = QtWidgets.QLineEdit(parent=self.container_line3)
+        self.line_naturalidade.setObjectName("line_naturalidade")
+        self.cadastroHorizontal_3.addWidget(self.line_naturalidade)
         self.label_11 = QtWidgets.QLabel(parent=self.container_line3)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(9)
+        font.setBold(False)
+        font.setItalic(False)
+        self.label_11.setFont(font)
+        self.label_11.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
+        self.label_11.setStyleSheet("font: 9pt \"Segoe UI\";")
+        self.label_11.setIndent(2)
         self.label_11.setObjectName("label_11")
         self.cadastroHorizontal_3.addWidget(self.label_11)
-        self.comboBox_2 = QtWidgets.QComboBox(parent=self.container_line3)
-        self.comboBox_2.setObjectName("comboBox_2")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.cadastroHorizontal_3.addWidget(self.comboBox_2)
+        self.combo_uf = QtWidgets.QComboBox(parent=self.container_line3)
+        self.combo_uf.setObjectName("combo_uf")
+        self.combo_uf.addItem("")
+        self.combo_uf.addItem("")
+        self.combo_uf.addItem("")
+        self.combo_uf.addItem("")
+        self.combo_uf.addItem("")
+        self.cadastroHorizontal_3.addWidget(self.combo_uf)
         self.cadastroHorizontal_3.setStretch(1, 4)
         self.cadastroHorizontal_3.setStretch(3, 4)
         self.cadastroHorizontal_3.setStretch(5, 3)
@@ -456,7 +589,7 @@ class Ui_MainWindow(object):
         self.cadastroVertical_1.addWidget(self.container_line3)
         self.container_line4 = QtWidgets.QFrame(parent=self.container_cadastro)
         self.container_line4.setStyleSheet("#container_line4{\n"
-"    margin-top: 1.5em;\n"
+"    margin-top: 1em;\n"
 "    padding: 0;\n"
 "}\n"
 "\n"
@@ -486,7 +619,6 @@ class Ui_MainWindow(object):
 "\n"
 "QWidget > QFrame > QLineEdit:focus {\n"
 "  border: 1px solid #f9f9fa;\n"
-"  box-shadow: 0px 0px 0px 2px #242424;\n"
 "  background-color: transparent;\n"
 "}\n"
 "\n"
@@ -501,7 +633,6 @@ class Ui_MainWindow(object):
 "\n"
 "QWidget > QFrame > QComboBox:on {\n"
 "     border: 1px solid #f9f9fa;\n"
-"     box-shadow: 0px 0px 0px 2px #242424;\n"
 "     background-color: transparent;\n"
 "}\n"
 "\n"
@@ -537,13 +668,15 @@ class Ui_MainWindow(object):
         self.cadastroHorizontal_4.setObjectName("cadastroHorizontal_4")
         self.container_vertical2 = QtWidgets.QFrame(parent=self.container_line4)
         self.container_vertical2.setStyleSheet("")
+        self.container_vertical2.setLineWidth(1)
         self.container_vertical2.setObjectName("container_vertical2")
         self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.container_vertical2)
         self.verticalLayout_8.setSizeConstraint(QtWidgets.QLayout.SizeConstraint.SetDefaultConstraint)
         self.verticalLayout_8.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_8.setSpacing(24)
+        self.verticalLayout_8.setSpacing(0)
         self.verticalLayout_8.setObjectName("verticalLayout_8")
         self.container_horizontal2 = QtWidgets.QFrame(parent=self.container_vertical2)
+        self.container_horizontal2.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
         self.container_horizontal2.setStyleSheet("QWidget > QFrame{\n"
 "\n"
 "}\n"
@@ -566,29 +699,48 @@ class Ui_MainWindow(object):
 "\n"
 "QWidget > QFrame > QLineEdit:focus {\n"
 "  border: 1px solid #f9f9fa;\n"
-"  box-shadow: 0px 0px 0px 2px #242424;\n"
 "  background-color: transparent;\n"
 "}")
         self.container_horizontal2.setObjectName("container_horizontal2")
         self.horizontalLayout_7 = QtWidgets.QHBoxLayout(self.container_horizontal2)
-        self.horizontalLayout_7.setSpacing(4)
+        self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_7.setSpacing(8)
         self.horizontalLayout_7.setObjectName("horizontalLayout_7")
         self.label_15 = QtWidgets.QLabel(parent=self.container_horizontal2)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(9)
+        font.setBold(False)
+        font.setItalic(False)
+        self.label_15.setFont(font)
+        self.label_15.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
+        self.label_15.setStyleSheet("font: 9pt \"Segoe UI\";")
+        self.label_15.setIndent(2)
         self.label_15.setObjectName("label_15")
         self.horizontalLayout_7.addWidget(self.label_15)
-        self.lineEdit_10 = QtWidgets.QLineEdit(parent=self.container_horizontal2)
-        self.lineEdit_10.setObjectName("lineEdit_10")
-        self.horizontalLayout_7.addWidget(self.lineEdit_10)
+        self.line_endereco = QtWidgets.QLineEdit(parent=self.container_horizontal2)
+        self.line_endereco.setObjectName("line_endereco")
+        self.horizontalLayout_7.addWidget(self.line_endereco)
         self.label_16 = QtWidgets.QLabel(parent=self.container_horizontal2)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(9)
+        font.setBold(False)
+        font.setItalic(False)
+        self.label_16.setFont(font)
+        self.label_16.setToolTipDuration(7)
+        self.label_16.setStyleSheet("font: 9pt \"Segoe UI\";")
+        self.label_16.setIndent(2)
         self.label_16.setObjectName("label_16")
         self.horizontalLayout_7.addWidget(self.label_16)
-        self.lineEdit_11 = QtWidgets.QLineEdit(parent=self.container_horizontal2)
-        self.lineEdit_11.setObjectName("lineEdit_11")
-        self.horizontalLayout_7.addWidget(self.lineEdit_11)
+        self.line_numero = QtWidgets.QLineEdit(parent=self.container_horizontal2)
+        self.line_numero.setObjectName("line_numero")
+        self.horizontalLayout_7.addWidget(self.line_numero)
         self.horizontalLayout_7.setStretch(1, 4)
         self.horizontalLayout_7.setStretch(3, 1)
         self.verticalLayout_8.addWidget(self.container_horizontal2)
         self.container_horizontal1 = QtWidgets.QFrame(parent=self.container_vertical2)
+        self.container_horizontal1.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
         self.container_horizontal1.setStyleSheet("QWidget > QFrame{\n"
 "\n"
 "}\n"
@@ -611,37 +763,57 @@ class Ui_MainWindow(object):
 "\n"
 "QWidget > QFrame > QLineEdit:focus {\n"
 "  border: 1px solid #f9f9fa;\n"
-"  box-shadow: 0px 0px 0px 2px #242424;\n"
 "  background-color: transparent;\n"
 "}")
         self.container_horizontal1.setObjectName("container_horizontal1")
         self.horizontalLayout_6 = QtWidgets.QHBoxLayout(self.container_horizontal1)
-        self.horizontalLayout_6.setSpacing(4)
+        self.horizontalLayout_6.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_6.setSpacing(8)
         self.horizontalLayout_6.setObjectName("horizontalLayout_6")
         self.label_13 = QtWidgets.QLabel(parent=self.container_horizontal1)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(9)
+        font.setBold(False)
+        font.setItalic(False)
+        self.label_13.setFont(font)
+        self.label_13.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
+        self.label_13.setStyleSheet("font: 9pt \"Segoe UI\";")
+        self.label_13.setIndent(2)
         self.label_13.setObjectName("label_13")
         self.horizontalLayout_6.addWidget(self.label_13)
-        self.comboBox_3 = QtWidgets.QComboBox(parent=self.container_horizontal1)
-        self.comboBox_3.setObjectName("comboBox_3")
-        self.comboBox_3.addItem("")
-        self.comboBox_3.addItem("")
-        self.comboBox_3.addItem("")
-        self.comboBox_3.addItem("")
-        self.horizontalLayout_6.addWidget(self.comboBox_3)
+        self.combo_professora = QtWidgets.QComboBox(parent=self.container_horizontal1)
+        self.combo_professora.setObjectName("combo_professora")
+        self.combo_professora.addItem("")
+        self.combo_professora.addItem("")
+        self.combo_professora.addItem("")
+        self.combo_professora.addItem("")
+        self.horizontalLayout_6.addWidget(self.combo_professora)
         self.label_14 = QtWidgets.QLabel(parent=self.container_horizontal1)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(9)
+        font.setBold(False)
+        font.setItalic(False)
+        self.label_14.setFont(font)
+        self.label_14.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
+        self.label_14.setStyleSheet("font: 9pt \"Segoe UI\";")
+        self.label_14.setIndent(2)
         self.label_14.setObjectName("label_14")
         self.horizontalLayout_6.addWidget(self.label_14)
-        self.comboBox_4 = QtWidgets.QComboBox(parent=self.container_horizontal1)
-        self.comboBox_4.setObjectName("comboBox_4")
-        self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
-        self.horizontalLayout_6.addWidget(self.comboBox_4)
+        self.combo_turma = QtWidgets.QComboBox(parent=self.container_horizontal1)
+        self.combo_turma.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
+        self.combo_turma.setObjectName("combo_turma")
+        self.combo_turma.addItem("")
+        self.combo_turma.addItem("")
+        self.combo_turma.addItem("")
+        self.combo_turma.addItem("")
+        self.horizontalLayout_6.addWidget(self.combo_turma)
         self.horizontalLayout_6.setStretch(1, 4)
         self.horizontalLayout_6.setStretch(3, 2)
         self.verticalLayout_8.addWidget(self.container_horizontal1)
         self.container_horizontal3 = QtWidgets.QFrame(parent=self.container_vertical2)
+        self.container_horizontal3.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
         self.container_horizontal3.setStyleSheet("QWidget > QFrame{\n"
 "\n"
 "}\n"
@@ -664,68 +836,377 @@ class Ui_MainWindow(object):
 "\n"
 "QWidget > QFrame > QLineEdit:focus {\n"
 "  border: 1px solid #f9f9fa;\n"
-"  box-shadow: 0px 0px 0px 2px #242424;\n"
 "  background-color: transparent;\n"
 "}")
         self.container_horizontal3.setObjectName("container_horizontal3")
         self.horizontalLayout_8 = QtWidgets.QHBoxLayout(self.container_horizontal3)
-        self.horizontalLayout_8.setSpacing(4)
+        self.horizontalLayout_8.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_8.setSpacing(8)
         self.horizontalLayout_8.setObjectName("horizontalLayout_8")
         self.label_17 = QtWidgets.QLabel(parent=self.container_horizontal3)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(9)
+        font.setBold(False)
+        font.setItalic(False)
+        self.label_17.setFont(font)
+        self.label_17.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
+        self.label_17.setStyleSheet("font: 9pt \"Segoe UI\";")
+        self.label_17.setIndent(2)
         self.label_17.setObjectName("label_17")
         self.horizontalLayout_8.addWidget(self.label_17)
-        self.lineEdit_12 = QtWidgets.QLineEdit(parent=self.container_horizontal3)
-        self.lineEdit_12.setObjectName("lineEdit_12")
-        self.horizontalLayout_8.addWidget(self.lineEdit_12)
+        self.line_cidade = QtWidgets.QLineEdit(parent=self.container_horizontal3)
+        self.line_cidade.setObjectName("line_cidade")
+        self.horizontalLayout_8.addWidget(self.line_cidade)
         self.label_18 = QtWidgets.QLabel(parent=self.container_horizontal3)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(9)
+        font.setBold(False)
+        font.setItalic(False)
+        self.label_18.setFont(font)
+        self.label_18.setStyleSheet("font: 9pt \"Segoe UI\";")
+        self.label_18.setIndent(2)
         self.label_18.setObjectName("label_18")
         self.horizontalLayout_8.addWidget(self.label_18)
-        self.lineEdit_13 = QtWidgets.QLineEdit(parent=self.container_horizontal3)
-        self.lineEdit_13.setObjectName("lineEdit_13")
-        self.horizontalLayout_8.addWidget(self.lineEdit_13)
+        self.line_uf = QtWidgets.QLineEdit(parent=self.container_horizontal3)
+        self.line_uf.setObjectName("line_uf")
+        self.horizontalLayout_8.addWidget(self.line_uf)
         self.label_19 = QtWidgets.QLabel(parent=self.container_horizontal3)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(9)
+        font.setBold(False)
+        font.setItalic(False)
+        self.label_19.setFont(font)
+        self.label_19.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
+        self.label_19.setStyleSheet("font: 9pt \"Segoe UI\";")
+        self.label_19.setIndent(2)
         self.label_19.setObjectName("label_19")
         self.horizontalLayout_8.addWidget(self.label_19)
-        self.lineEdit_14 = QtWidgets.QLineEdit(parent=self.container_horizontal3)
-        self.lineEdit_14.setObjectName("lineEdit_14")
-        self.horizontalLayout_8.addWidget(self.lineEdit_14)
+        self.line_cep = QtWidgets.QLineEdit(parent=self.container_horizontal3)
+        self.line_cep.setObjectName("line_cep")
+        self.horizontalLayout_8.addWidget(self.line_cep)
         self.horizontalLayout_8.setStretch(1, 4)
         self.horizontalLayout_8.setStretch(3, 1)
         self.horizontalLayout_8.setStretch(5, 2)
         self.verticalLayout_8.addWidget(self.container_horizontal3)
-        spacerItem1 = QtWidgets.QSpacerItem(20, 30, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_8.addItem(spacerItem1)
         self.cadastroHorizontal_4.addWidget(self.container_vertical2)
         self.container_vertical1 = QtWidgets.QFrame(parent=self.container_line4)
+        self.container_vertical1.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
         self.container_vertical1.setStyleSheet("")
         self.container_vertical1.setObjectName("container_vertical1")
         self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.container_vertical1)
-        self.verticalLayout_6.setSpacing(4)
+        self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_6.setSpacing(8)
         self.verticalLayout_6.setObjectName("verticalLayout_6")
         self.label_12 = QtWidgets.QLabel(parent=self.container_vertical1)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(9)
+        font.setBold(False)
+        font.setItalic(False)
+        self.label_12.setFont(font)
+        self.label_12.setStyleSheet("font: 9pt \"Segoe UI\";")
+        self.label_12.setIndent(2)
         self.label_12.setObjectName("label_12")
         self.verticalLayout_6.addWidget(self.label_12)
-        self.textEdit = QtWidgets.QTextEdit(parent=self.container_vertical1)
-        self.textEdit.setObjectName("textEdit")
-        self.verticalLayout_6.addWidget(self.textEdit)
+        self.line_hipotese = QtWidgets.QTextEdit(parent=self.container_vertical1)
+        self.line_hipotese.viewport().setProperty("cursor", QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
+        self.line_hipotese.setObjectName("line_hipotese")
+        self.verticalLayout_6.addWidget(self.line_hipotese)
         self.cadastroHorizontal_4.addWidget(self.container_vertical1)
         self.cadastroHorizontal_4.setStretch(0, 6)
         self.cadastroHorizontal_4.setStretch(1, 4)
         self.cadastroVertical_1.addWidget(self.container_line4)
+        self.container_salvar = QtWidgets.QFrame(parent=self.container_cadastro)
+        self.container_salvar.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
+        self.container_salvar.setStyleSheet("#container_salvar{\n"
+"    padding: 0;\n"
+"}")
+        self.container_salvar.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.container_salvar.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.container_salvar.setObjectName("container_salvar")
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.container_salvar)
+        self.horizontalLayout_3.setContentsMargins(0, 32, 0, 0)
+        self.horizontalLayout_3.setSpacing(0)
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_3.addItem(spacerItem1)
+        self.pushButton_salvar = QtWidgets.QPushButton(parent=self.container_salvar)
+        font = QtGui.QFont()
+        font.setFamily("Roboto")
+        font.setPointSize(12)
+        font.setBold(True)
+        self.pushButton_salvar.setFont(font)
+        self.pushButton_salvar.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
+        self.pushButton_salvar.setStyleSheet("QPushButton {\n"
+"    background-color: #35c688;\n"
+"    padding: 0.5em 2em;\n"
+"    color: #f9f9fa;\n"
+"    font-weight: 700;\n"
+"    border-radius: 8px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #272944;\n"
+"    color: #f9f9fa;\n"
+"    border: 2px solid #35c688;\n"
+"}")
+        self.pushButton_salvar.setObjectName("pushButton_salvar")
+        self.horizontalLayout_3.addWidget(self.pushButton_salvar)
+        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_3.addItem(spacerItem2)
+        self.horizontalLayout_3.setStretch(0, 4)
+        self.horizontalLayout_3.setStretch(1, 3)
+        self.horizontalLayout_3.setStretch(2, 4)
+        self.cadastroVertical_1.addWidget(self.container_salvar)
         self.verticalLayout.addWidget(self.container_cadastro)
-        self.tabWidget.addTab(self.Cadastro, "")
-        self.tab = QtWidgets.QWidget()
-        self.tab.setObjectName("tab")
-        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.tab)
+        self.tabWidget.addTab(self.tab_cadastro, "")
+        self.tab_turmas = QtWidgets.QWidget()
+        self.tab_turmas.setObjectName("tab_turmas")
+        self.verticalLayout_7 = QtWidgets.QVBoxLayout(self.tab_turmas)
+        self.verticalLayout_7.setObjectName("verticalLayout_7")
+        self.container_turmas = QtWidgets.QFrame(parent=self.tab_turmas)
+        self.container_turmas.setStyleSheet("#container_turmas {\n"
+"    padding: 0;\n"
+"}")
+        self.container_turmas.setObjectName("container_turmas")
+        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.container_turmas)
+        self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_5.setSpacing(8)
         self.verticalLayout_5.setObjectName("verticalLayout_5")
-        self.tabWidget.addTab(self.tab, "")
+        self.turma_line1_2 = QtWidgets.QFrame(parent=self.container_turmas)
+        self.turma_line1_2.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
+        self.turma_line1_2.setStyleSheet("#turma_line1_2{\n"
+"    padding: 0;\n"
+"}\n"
+"\n"
+"QWidget > QFrame > QLabel {\n"
+"    border: none;\n"
+"    border-radius: none;\n"
+"    color: #f9f9fa;\n"
+"    font-size: 12px;\n"
+"    padding:0;\n"
+"}\n"
+"\n"
+"QWidget > QFrame > QLineEdit {\n"
+"    background-color: #272944;\n"
+"     padding: 0 16px;\n"
+"     border-radius: 8px;\n"
+"    color: #f9f9fa;\n"
+"    height: 32px\n"
+"}\n"
+"\n"
+"QWidget > QFrame > QLineEdit:focus {\n"
+"  border: 1px solid #f9f9fa;\n"
+"  background-color: transparent;\n"
+"}\n"
+"\n"
+"QWidget > QFrame > QComboBox {\n"
+"    background-color: #272944;\n"
+"    padding: 0 16px;\n"
+"    border-radius: 8px;\n"
+"    color: #f9f9fa;\n"
+"    height: 32px\n"
+"}\n"
+"\n"
+"QWidget > QFrame > QComboBox:on {\n"
+"     border: 1px solid #f9f9fa;\n"
+"     background-color: transparent;\n"
+"}\n"
+"\n"
+"QWidget > QFrame > QComboBox::drop-down {\n"
+"    width: 16px;\n"
+"    border-left-width: 1px;\n"
+"    border-left-color: darkgray;\n"
+"    border-left-style: solid;\n"
+"}\n"
+"\n"
+"QWidget > QFrame > QComboBox  QAbstractItemView {\n"
+"    padding: 0;\n"
+"     background-color: transparent;\n"
+"    color: #f9f9fa\n"
+"}")
+        self.turma_line1_2.setObjectName("turma_line1_2")
+        self.turma_line1 = QtWidgets.QHBoxLayout(self.turma_line1_2)
+        self.turma_line1.setContentsMargins(0, 0, 0, 0)
+        self.turma_line1.setSpacing(8)
+        self.turma_line1.setObjectName("turma_line1")
+        self.label_20 = QtWidgets.QLabel(parent=self.turma_line1_2)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(9)
+        font.setBold(False)
+        font.setItalic(False)
+        self.label_20.setFont(font)
+        self.label_20.setStyleSheet("font: 9pt \"Segoe UI\";")
+        self.label_20.setObjectName("label_20")
+        self.turma_line1.addWidget(self.label_20)
+        self.line_turma = QtWidgets.QLineEdit(parent=self.turma_line1_2)
+        self.line_turma.setObjectName("line_turma")
+        self.turma_line1.addWidget(self.line_turma)
+        self.label_21 = QtWidgets.QLabel(parent=self.turma_line1_2)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(9)
+        font.setBold(False)
+        font.setItalic(False)
+        self.label_21.setFont(font)
+        self.label_21.setStyleSheet("font: 9pt \"Segoe UI\";")
+        self.label_21.setObjectName("label_21")
+        self.turma_line1.addWidget(self.label_21)
+        self.line_professora = QtWidgets.QLineEdit(parent=self.turma_line1_2)
+        self.line_professora.setObjectName("line_professora")
+        self.turma_line1.addWidget(self.line_professora)
+        self.label_22 = QtWidgets.QLabel(parent=self.turma_line1_2)
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(9)
+        font.setBold(False)
+        font.setItalic(False)
+        self.label_22.setFont(font)
+        self.label_22.setStyleSheet("font: 9pt \"Segoe UI\";")
+        self.label_22.setObjectName("label_22")
+        self.turma_line1.addWidget(self.label_22)
+        self.combo_turno = QtWidgets.QComboBox(parent=self.turma_line1_2)
+        self.combo_turno.setObjectName("combo_turno")
+        self.combo_turno.addItem("")
+        self.combo_turno.addItem("")
+        self.turma_line1.addWidget(self.combo_turno)
+        self.turma_line1.setStretch(1, 4)
+        self.turma_line1.setStretch(3, 4)
+        self.turma_line1.setStretch(5, 2)
+        self.verticalLayout_5.addWidget(self.turma_line1_2)
+        self.turma_line2_2 = QtWidgets.QFrame(parent=self.container_turmas)
+        self.turma_line2_2.setStyleSheet("#turma_line2_2{\n"
+"    padding: 0;\n"
+"}")
+        self.turma_line2_2.setObjectName("turma_line2_2")
+        self.turma_line2 = QtWidgets.QHBoxLayout(self.turma_line2_2)
+        self.turma_line2.setContentsMargins(0, 0, 0, 0)
+        self.turma_line2.setSpacing(8)
+        self.turma_line2.setObjectName("turma_line2")
+        spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.turma_line2.addItem(spacerItem3)
+        self.pushButton_turma_salvar = QtWidgets.QPushButton(parent=self.turma_line2_2)
+        font = QtGui.QFont()
+        font.setFamily("Roboto Black")
+        font.setPointSize(12)
+        font.setBold(True)
+        self.pushButton_turma_salvar.setFont(font)
+        self.pushButton_turma_salvar.setStyleSheet("QPushButton {\n"
+"    background-color: #35c688;\n"
+"    padding: 0.5em 2em;\n"
+"    color: #f9f9fa;\n"
+"    font-weight: 700;\n"
+"    border-radius: 8px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #272944;\n"
+"    color: #f9f9fa;\n"
+"    border: 2px solid #35c688;\n"
+"}")
+        self.pushButton_turma_salvar.setObjectName("pushButton_turma_salvar")
+        self.turma_line2.addWidget(self.pushButton_turma_salvar)
+        self.turma_line2.setStretch(0, 6)
+        self.turma_line2.setStretch(1, 2)
+        self.verticalLayout_5.addWidget(self.turma_line2_2)
+        self.turma_line3_2 = QtWidgets.QFrame(parent=self.container_turmas)
+        self.turma_line3_2.setStyleSheet("#turma_line3_2 {\n"
+"    padding: 0;\n"
+"}")
+        self.turma_line3_2.setObjectName("turma_line3_2")
+        self.turma_line3 = QtWidgets.QHBoxLayout(self.turma_line3_2)
+        self.turma_line3.setContentsMargins(0, 0, 0, 0)
+        self.turma_line3.setSpacing(8)
+        self.turma_line3.setObjectName("turma_line3")
+        self.tableWidget_2 = QtWidgets.QTableWidget(parent=self.turma_line3_2)
+        self.tableWidget_2.setStyleSheet("QTableWidget {\n"
+"    background-color: #f9f9fa;\n"
+"    border-radius: 8px;\n"
+"}\n"
+"\n"
+"QHeaderView::section {\n"
+"    background-color: #f9f9fa;\n"
+"    margin: 0;\n"
+"}")
+        self.tableWidget_2.setObjectName("tableWidget_2")
+        self.tableWidget_2.setColumnCount(0)
+        self.tableWidget_2.setRowCount(0)
+        self.turma_line3.addWidget(self.tableWidget_2)
+        self.verticalLayout_5.addWidget(self.turma_line3_2)
+        self.turma_line4_2 = QtWidgets.QFrame(parent=self.container_turmas)
+        self.turma_line4_2.setStyleSheet("#turma_line4_2 {\n"
+"    padding: 0;\n"
+"}")
+        self.turma_line4_2.setObjectName("turma_line4_2")
+        self.turma_line4 = QtWidgets.QHBoxLayout(self.turma_line4_2)
+        self.turma_line4.setContentsMargins(0, 0, 0, 0)
+        self.turma_line4.setSpacing(8)
+        self.turma_line4.setObjectName("turma_line4")
+        spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.turma_line4.addItem(spacerItem4)
+        self.pushButton_3 = QtWidgets.QPushButton(parent=self.turma_line4_2)
+        font = QtGui.QFont()
+        font.setFamily("Roboto Black")
+        font.setPointSize(12)
+        font.setBold(True)
+        self.pushButton_3.setFont(font)
+        self.pushButton_3.setStyleSheet("QPushButton {\n"
+"    background-color: #404bda;\n"
+"    padding: 0.5em 2em;\n"
+"    color: #f9f9fa;\n"
+"    font-weight: 700;\n"
+"    border-radius: 8px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #272944;\n"
+"    color: #f9f9fa;\n"
+"    border: 2px solid #404bda;\n"
+"}")
+        self.pushButton_3.setObjectName("pushButton_3")
+        self.turma_line4.addWidget(self.pushButton_3)
+        self.pushButton_2 = QtWidgets.QPushButton(parent=self.turma_line4_2)
+        font = QtGui.QFont()
+        font.setFamily("Roboto Black")
+        font.setPointSize(12)
+        font.setBold(True)
+        self.pushButton_2.setFont(font)
+        self.pushButton_2.setStyleSheet("QPushButton {\n"
+"    background-color: #ee0125;\n"
+"    padding: 0.5em 2em;\n"
+"    color: #f9f9fa;\n"
+"    font-weight: 700;\n"
+"    border-radius: 8px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #272944;\n"
+"    color: #f9f9fa;\n"
+"    border: 2px solid #ee0125;\n"
+"}")
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.turma_line4.addWidget(self.pushButton_2)
+        self.turma_line4.setStretch(0, 6)
+        self.turma_line4.setStretch(1, 2)
+        self.turma_line4.setStretch(2, 2)
+        self.verticalLayout_5.addWidget(self.turma_line4_2)
+        self.verticalLayout_5.setStretch(0, 1)
+        self.verticalLayout_5.setStretch(1, 1)
+        self.verticalLayout_5.setStretch(2, 6)
+        self.verticalLayout_5.setStretch(3, 1)
+        self.verticalLayout_7.addWidget(self.container_turmas)
+        self.tabWidget.addTab(self.tab_turmas, "")
         self.verticalLayout_3.addWidget(self.tabWidget)
         self.verticalLayout_2.addWidget(self.frame_content)
         self.verticalLayout_10.addWidget(self.widget)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -736,44 +1217,53 @@ class Ui_MainWindow(object):
         self.pushButton_visualizar.setText(_translate("MainWindow", "Visualizar"))
         self.pushButton_editar.setText(_translate("MainWindow", "Editar"))
         self.pushButton_excluir.setText(_translate("MainWindow", "Excluir"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.home), _translate("MainWindow", "Home"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_home), _translate("MainWindow", "Home"))
         self.label.setText(_translate("MainWindow", "Nome Completo"))
         self.label_2.setText(_translate("MainWindow", "CPF"))
-        self.lineEdit_2.setInputMask(_translate("MainWindow", "999.999.999-99"))
+        self.line_cpf.setInputMask(_translate("MainWindow", "999.999.999-99"))
         self.label_3.setText(_translate("MainWindow", "Data de Nasc"))
-        self.lineEdit_3.setInputMask(_translate("MainWindow", "99/99/9999"))
+        self.Line_Edit_Dt.setInputMask(_translate("MainWindow", "99/99/9999"))
         self.label_4.setText(_translate("MainWindow", "Sexo"))
-        self.comboBox.setItemText(0, _translate("MainWindow", "M"))
-        self.comboBox.setItemText(1, _translate("MainWindow", "F"))
+        self.combo_sexo.setItemText(0, _translate("MainWindow", "M"))
+        self.combo_sexo.setItemText(1, _translate("MainWindow", "F"))
         self.label_5.setText(_translate("MainWindow", "Nome da Mãe"))
         self.label_6.setText(_translate("MainWindow", "Nome do Pai"))
         self.label_7.setText(_translate("MainWindow", "Matricula"))
         self.label_8.setText(_translate("MainWindow", "Telefone 01"))
-        self.lineEdit_7.setInputMask(_translate("MainWindow", "(99) 99999-9999"))
+        self.line_telefone1.setInputMask(_translate("MainWindow", "(99) 99999-9999"))
         self.label_9.setText(_translate("MainWindow", "Telefone 02"))
-        self.lineEdit_8.setInputMask(_translate("MainWindow", "(99) 99999-9999"))
+        self.line_telefone2.setInputMask(_translate("MainWindow", "(99) 99999-9999"))
         self.label_10.setText(_translate("MainWindow", "Naturalidade"))
         self.label_11.setText(_translate("MainWindow", "UF"))
-        self.comboBox_2.setItemText(0, _translate("MainWindow", "GO"))
-        self.comboBox_2.setItemText(1, _translate("MainWindow", "DF"))
-        self.comboBox_2.setItemText(2, _translate("MainWindow", "MG"))
-        self.comboBox_2.setItemText(3, _translate("MainWindow", "TO"))
-        self.comboBox_2.setItemText(4, _translate("MainWindow", "SP"))
+        self.combo_uf.setItemText(0, _translate("MainWindow", "GO"))
+        self.combo_uf.setItemText(1, _translate("MainWindow", "DF"))
+        self.combo_uf.setItemText(2, _translate("MainWindow", "MG"))
+        self.combo_uf.setItemText(3, _translate("MainWindow", "TO"))
+        self.combo_uf.setItemText(4, _translate("MainWindow", "SP"))
         self.label_15.setText(_translate("MainWindow", "Endereço"))
         self.label_16.setText(_translate("MainWindow", "Nº"))
         self.label_13.setText(_translate("MainWindow", "Professora"))
-        self.comboBox_3.setItemText(0, _translate("MainWindow", "Maria"))
-        self.comboBox_3.setItemText(1, _translate("MainWindow", "Lucia"))
-        self.comboBox_3.setItemText(2, _translate("MainWindow", "Ana Carolina"))
-        self.comboBox_3.setItemText(3, _translate("MainWindow", "Juliana"))
+        self.combo_professora.setItemText(0, _translate("MainWindow", "Maria"))
+        self.combo_professora.setItemText(1, _translate("MainWindow", "Lucia"))
+        self.combo_professora.setItemText(2, _translate("MainWindow", "Ana Carolina"))
+        self.combo_professora.setItemText(3, _translate("MainWindow", "Juliana"))
         self.label_14.setText(_translate("MainWindow", "Turma"))
-        self.comboBox_4.setItemText(0, _translate("MainWindow", "A"))
-        self.comboBox_4.setItemText(1, _translate("MainWindow", "B"))
-        self.comboBox_4.setItemText(2, _translate("MainWindow", "C"))
-        self.comboBox_4.setItemText(3, _translate("MainWindow", "D"))
+        self.combo_turma.setItemText(0, _translate("MainWindow", "A"))
+        self.combo_turma.setItemText(1, _translate("MainWindow", "B"))
+        self.combo_turma.setItemText(2, _translate("MainWindow", "C"))
+        self.combo_turma.setItemText(3, _translate("MainWindow", "D"))
         self.label_17.setText(_translate("MainWindow", "Cidade"))
         self.label_18.setText(_translate("MainWindow", "UF"))
         self.label_19.setText(_translate("MainWindow", "CEP"))
         self.label_12.setText(_translate("MainWindow", "Hipótese Diagnóstica"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.Cadastro), _translate("MainWindow", "Cadastro"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("MainWindow", "Turmas"))
+        self.pushButton_salvar.setText(_translate("MainWindow", "Salvar"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_cadastro), _translate("MainWindow", "Cadastro"))
+        self.label_20.setText(_translate("MainWindow", "Nome da Turma"))
+        self.label_21.setText(_translate("MainWindow", "Nome da Professora"))
+        self.label_22.setText(_translate("MainWindow", "Turno"))
+        self.combo_turno.setItemText(0, _translate("MainWindow", "Matutino"))
+        self.combo_turno.setItemText(1, _translate("MainWindow", "Vespertino"))
+        self.pushButton_turma_salvar.setText(_translate("MainWindow", "Salvar"))
+        self.pushButton_3.setText(_translate("MainWindow", "Editar"))
+        self.pushButton_2.setText(_translate("MainWindow", "Excluir"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_turmas), _translate("MainWindow", "Turmas"))
