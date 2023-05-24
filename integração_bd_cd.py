@@ -1,8 +1,7 @@
 #Importando biblioteca BD
 import mysql.connector
 from cadastro import dados_alunos,dados_turma,dados_endereco
-
-data = dados_turma,dados_alunos,dados_endereco
+import datetime
 
 try: #Try para gerenciamento de erro
 
@@ -13,14 +12,21 @@ try: #Try para gerenciamento de erro
     password="123456",
     database="Estimulacao_Precoce"
 )
+    #Criando cursor e executando SQL no banco de dados
+    cursor = con.cursor()
+
     # crud 
     if len(dados_alunos) != 0:
+     data_nascimento = datetime.datetime.strptime(dados_alunos[0][2],'%d/%m/%Y')
      insert_alunos = f"""
                     INSERT INTO alunos 
                     (NomeCompleto,CPF,DataNascimento,Sexo,Mae,Pai,Matricula,Telefone1,Telefone2,Naturalidade,UF,HipoteseDiagnostica)
                     VALUES 
-                    ('{dados_alunos[0][0]}','{dados_alunos[0][1]}','{dados_alunos[0][2]}','{dados_alunos[0][9]}','{dados_alunos[0][3]}','{dados_alunos[0][4]}',
+                    ('{dados_alunos[0][0]}','{dados_alunos[0][1]}','{data_nascimento}','{dados_alunos[0][9]}','{dados_alunos[0][3]}','{dados_alunos[0][4]}','{dados_alunos[0][8]}',
                     '{dados_alunos[0][5]}','{dados_alunos[0][6]}','{dados_alunos[0][7]}','{dados_alunos[0][11]}','{dados_alunos[0][13]}')"""
+     cursor.execute(insert_alunos)
+     con.commit()
+     print("Dados inseridos com sucesso na tabela alunos .")
     
     if len(dados_turma) != 0:
      insert_turma = f"""
@@ -28,6 +34,9 @@ try: #Try para gerenciamento de erro
                     (NomeTurma,Turno,Professor)
                     VALUES
                     ('{dados_turma[0][1]}','{dados_turma[0][0]}','{dados_turma[0][2]}')"""
+     cursor.execute(insert_turma)
+     con.commit()
+     print("Dados inseridos com sucesso na tabela turma.")
     
     if len(dados_endereco) != 0:
      insert_endereco = f"""
@@ -36,20 +45,9 @@ try: #Try para gerenciamento de erro
                     VALUES
                     ('{dados_endereco[0][0]}','{dados_endereco[0][1]}','{dados_endereco[0][2]}','{dados_endereco[0][3]}','{dados_endereco[0][4]}')
                     """
-    
-#Criando cursor e executando SQL no banco de dados
-    cursor = con.cursor()
-
-    if len(dados_alunos) != 0:
-        cursor.execute(insert_alunos,insert_endereco)
-        con.commit()
-        print("Dados inseridos com sucesso na tabela alunos e endereco.")
-
-    if len(dados_turma) != 0:
-       cursor.execute(insert_turma)
-       con.commit()
-       print("Dados inseridos com sucesso na tabela turma.")
-
+     cursor.execute(insert_endereco)
+     con.commit()
+     print("Dados inseridos com sucesso na tabela endereco.")
 
 #Aviso erro
 except mysql.connector.Error as erro: 

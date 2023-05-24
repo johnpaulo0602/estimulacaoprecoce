@@ -87,6 +87,7 @@ janela.pushButton_excluir.clicked.connect(deletar_dados)
 janela.show()
 app.exec()
 
+
 print (dados_turma)
 print (dados_alunos)
 print (dados_endereco)
