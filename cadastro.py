@@ -1,12 +1,11 @@
 from PyQt5 import uic, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 
-# Função responsável por coletar os dados cadastrados dos alunos.
-
 dados_endereco = []
 dados_alunos = []
 dados_turma = []
 
+# Função responsável por coletar os dados cadastrados dos alunos.
 def cadastrar_dados_alunos():
     
     campos_line_edit = ['line_nome','line_cpf','Line_Edit_Dt','line_mae',
@@ -64,6 +63,7 @@ def cadastrar_turma():
     dados = turno_combo_box + dados_line_edit
     dados_turma.append(dados)  
 
+    #Alerta de algum campo vazio, se estiver tudo preenchido as box serão limpas
     if '' in dados:
         QMessageBox.about(janela, 'Aletar', 'Algum campo está vazio')
     else:
@@ -80,7 +80,7 @@ def deletar_dados():
   
 #executador da interface
 app=QtWidgets.QApplication([])
-janela=uic.loadUi('estimulacaoprecoce/interface.ui')
+janela=uic.loadUi('interface.ui')
 janela.pushButton_turma_salvar.clicked.connect(cadastrar_turma)
 janela.pushButton_salvar.clicked.connect(cadastrar_dados_alunos)
 janela.pushButton_excluir.clicked.connect(deletar_dados)

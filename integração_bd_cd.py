@@ -15,9 +15,13 @@ try: #Try para gerenciamento de erro
     #Criando cursor e executando SQL no banco de dados
     cursor = con.cursor()
 
-    # crud 
+    #Crud inserindo os dados
     if len(dados_alunos) != 0:
+     
+     #Conversão de formato da data
      data_nascimento = datetime.datetime.strptime(dados_alunos[0][2],'%d/%m/%Y')
+
+    # Inserindo dados tabela alunos
      insert_alunos = f"""
                     INSERT INTO alunos 
                     (NomeCompleto,CPF,DataNascimento,Sexo,Mae,Pai,Matricula,Telefone1,Telefone2,Naturalidade,UF,HipoteseDiagnostica)
@@ -28,6 +32,7 @@ try: #Try para gerenciamento de erro
      con.commit()
      print("Dados inseridos com sucesso na tabela alunos .")
     
+    # Inserindo dados tabela turma
     if len(dados_turma) != 0:
      insert_turma = f"""
                     INSERT INTO Turma
@@ -38,6 +43,7 @@ try: #Try para gerenciamento de erro
      con.commit()
      print("Dados inseridos com sucesso na tabela turma.")
     
+    # Inserindo dados tabela endereco
     if len(dados_endereco) != 0:
      insert_endereco = f"""
                     INSERT INTO endereco
@@ -53,9 +59,8 @@ try: #Try para gerenciamento de erro
 except mysql.connector.Error as erro: 
  print("Falha ao inserir os dados: {}".format(erro))
 
-
+#Fechando servidor SQL
 finally:
-
  if (con.is_connected()):
     cursor = con.cursor()
     cursor.close()
