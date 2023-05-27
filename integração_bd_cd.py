@@ -3,6 +3,7 @@ import mysql.connector
 from cadastro import dados_alunos,dados_turma,dados_endereco
 import datetime
 
+
 try: #Try para gerenciamento de erro
 
     #conectando ao banco de dados
@@ -32,7 +33,7 @@ try: #Try para gerenciamento de erro
      con.commit()
      print("Dados inseridos com sucesso na tabela alunos .")
     
-    # Inserindo dados tabela turma
+    #Crud Inserindo dados tabela turma
     if len(dados_turma) != 0:
      insert_turma = f"""
                     INSERT INTO Turma
@@ -43,7 +44,7 @@ try: #Try para gerenciamento de erro
      con.commit()
      print("Dados inseridos com sucesso na tabela turma.")
     
-    # Inserindo dados tabela endereco
+    #Crud Inserindo dados tabela endereco
     if len(dados_endereco) != 0:
      insert_endereco = f"""
                     INSERT INTO endereco
@@ -54,6 +55,7 @@ try: #Try para gerenciamento de erro
      cursor.execute(insert_endereco)
      con.commit()
      print("Dados inseridos com sucesso na tabela endereco.")
+    
 
 #Aviso erro
 except mysql.connector.Error as erro: 

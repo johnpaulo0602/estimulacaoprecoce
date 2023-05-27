@@ -47,8 +47,7 @@ def cadastrar_dados_alunos():
 
     for campo in campos_line_edit:
         janela.findChild(QtWidgets.QLineEdit, campo).setText('')
-    
-
+ 
 #Função responsável por coletar os dados referente a turma
 def cadastrar_turma():
         
