@@ -3,7 +3,8 @@ O objetivo deste projeto é desenvolver um sistema de cadastro de crianças para
 
 ## Tecnologias Utilizadas ##
 - Python 3.9
-- PyQt6 e Qt Design para a interface gráfica
+- Django
+- Bootstrap 4.0
 - MySQL como banco de dados
 ## Especificações ##
 O sistema foi desenvolvido localmente, sem a necessidade de um domínio ou hospedagem externa. Ele permite o cadastro, visualização, atualização e exclusão de alunos de forma fácil e intuitiva, sem a necessidade de um curso específico.
